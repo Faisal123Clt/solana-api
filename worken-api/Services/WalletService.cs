@@ -9,7 +9,6 @@ namespace worken_api.Services
 
         public WalletService() { }
 
-
         public Wallet CreateWallet()
         {
             return new Wallet(WordCount.Twelve, WordList.English);
@@ -64,6 +63,5 @@ namespace worken_api.Services
 
             return words;
         }
-
     }
 }

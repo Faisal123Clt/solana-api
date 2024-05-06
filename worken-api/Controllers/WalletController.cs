@@ -50,14 +50,10 @@ namespace worken_api.Controllers
 
             WordList words = walletService.ConvertStringToWordList(wordList);
 
-            if (wordList == null)
-                return BadRequest($"{nameof(wordList)} was not correct");
-
             var wallet = walletService.CreateWallet(words);
 
             return Json(wallet);
         }
-
 
         [HttpPost("CreateWalletFull")]
         public async Task<IActionResult> CreateWallet([FromBody] WalletCreationRequest request)
