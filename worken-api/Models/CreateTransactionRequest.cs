@@ -1,12 +1,19 @@
-﻿namespace worken_api.Controllers
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace worken_api.Controllers
 {
     public class CreateTransactionRequest
     {
-        public string fromAccountPublicKey { get; set; }
-        public string fromAccountPrivateKey { get; set; }
+        [Required(ErrorMessage = $"{nameof(FromAccountPublicKey)} must be provided")]
+        public string FromAccountPublicKey { get; set; }
 
-        public string toAccountPublicKey { get; set; }
+        [Required(ErrorMessage = $"{nameof(FromAccountPrivateKey)} must be provided")]
+        public string FromAccountPrivateKey { get; set; }
 
-        public ulong lanPorts {  get; set; }
+        [Required(ErrorMessage = $"{nameof(ToAccountPublicKey)} must be provided")]
+        public string ToAccountPublicKey { get; set; }
+
+        [Required(ErrorMessage = $"{nameof(LanPorts)} must be provided")]
+        public ulong LanPorts {  get; set; }
     }
 }
