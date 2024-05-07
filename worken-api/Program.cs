@@ -7,6 +7,8 @@ namespace worken_api
 {
     public class Program
     {
+        public const string WorkenMintPublicKey = "9tnkusLJaycWpkzojAk5jmxkdkxBHRkFNVSsa7tPUgLb";
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
