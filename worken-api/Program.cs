@@ -13,6 +13,7 @@ namespace worken_api
 
             // Add services to the container.
             builder.Services.AddScoped<IWalletService, WalletService>();
+            builder.Services.AddScoped<IRpcService, RpcService>();
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
