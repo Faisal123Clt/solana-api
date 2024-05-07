@@ -3,7 +3,7 @@
 </p>
 
 <h3 align="center">
-  Multi-purpose Solana Blockchain based librar for custom solutions.
+  Multi-purpose Solana Blockchain based library for custom solutions.
 </h3>
 
 <p align="center">
