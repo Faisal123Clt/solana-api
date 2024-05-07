@@ -3,7 +3,7 @@
 </p>
 
 <h3 align="center">
-  Send & Receive secure Blockchain transactions on Solana
+  Multi-purpose Solana Blockchain based library for sending, receiving, burning tokens, managing wallets for custom solutions.
 </h3>
 
 <p align="center">
@@ -26,7 +26,7 @@
     </a>
 </p>
 
-SDK library providing access to make easy and secure Blockchain transactions on Solana.
+SDK library providing access to send, receive, burn Tokens, manage wallets.
 <p align="center">
  <h3 align="center">Endpoints<h3/>
 <p/>
