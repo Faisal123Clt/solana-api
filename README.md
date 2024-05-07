@@ -3,15 +3,12 @@
 </p>
 
 <h3 align="center">
-  Send & Receive secure Blockchain transactions on Solana with Worken
+  Send & Receive secure Blockchain transactions on Solana
 </h3>
-<p align="center">
-  🚀 Over 20M+ Users using Worken!
-</p>
 
 <p align="center">
-  <a href="https://github.com/paidworkco/worken-sdk-unity">
-    <img alt="GitHub Repository Stars Count" src="https://img.shields.io/github/stars/paidworkco/worken-sdk-unity?style=social" />
+  <a href="https://github.com/paidworkco/solana-api">
+    <img alt="GitHub Repository Stars Count" src="https://img.shields.io/github/stars/paidworkco/solana-api?style=social" />
   </a>
     <a href="https://x.com/paidworkco">
         <img alt="Follow Us on X" src="https://img.shields.io/twitter/follow/paidworkco?style=social" />
@@ -29,7 +26,7 @@
     </a>
 </p>
 
-SDK library providing access to make easy and secure Blockchain transactions with Worken. <a href="https://www.paidwork.com/worken?utm_source=github.com&utm_medium=referral&utm_campaign=readme" target="_blank">Read more</a> about Worken Token.
+SDK library providing access to make easy and secure Blockchain transactions on Solana.
 <p align="center">
  <h3 align="center">Endpoints<h3/>
 <p/>
