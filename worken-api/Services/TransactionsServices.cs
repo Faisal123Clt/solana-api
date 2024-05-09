@@ -9,7 +9,6 @@ namespace worken_api.Services
 {
     public class TransactionsServices : ITransactionsService
     {
-
         public TransactionsServices() { }
 
         public byte[] CreateTransaction(Account from, PublicKey to, LatestBlockHash blockHash, ulong lamports)
@@ -32,6 +31,28 @@ namespace worken_api.Services
                     AddInstruction(MemoProgram.NewMemo(from, memo)).
                     AddInstruction(SystemProgram.Transfer(from, to, lamports)).
                     Build(from);
+
+            return tx;
+        }
+
+        public byte[] CreateBurn(Account from, ulong amount)
+        {
+            var tx = new TransactionBuilder().
+                   SetFeePayer(from).
+                   AddInstruction(TokenProgram.Burn(from, Program.WorkenMintPublicKey, amount, from)).
+                   AddInstruction(MemoProgram.NewMemo(from, Guid.NewGuid().ToString())).
+                   Build(from);
+
+            return tx;
+        }
+
+        public byte[] CreateBurn(Account from, ulong amount, string memo)
+        {
+            var tx = new TransactionBuilder().
+                   SetFeePayer(from).
+                   AddInstruction(TokenProgram.Burn(from, Program.WorkenMintPublicKey, amount, from)).
+                   AddInstruction(MemoProgram.NewMemo(from, memo)).
+                   Build(from);
 
             return tx;
         }

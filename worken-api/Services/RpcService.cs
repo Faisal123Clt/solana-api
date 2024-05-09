@@ -2,8 +2,10 @@
 using Solnet.Rpc.Core.Http;
 using Solnet.Rpc.Messages;
 using Solnet.Rpc.Models;
+using System.Diagnostics;
 using System.Transactions;
 using worken_api.Interfaces;
+using worken_api.Models;
 
 namespace worken_api.Services
 {
@@ -43,7 +45,7 @@ namespace worken_api.Services
 
         public async Task<IEnumerable<TokenAccount>> GetTokenAccountsByOwner(IRpcClient client, string ownerPublicKey)
         {
-            var result = await client.GetTokenAccountsByOwnerAsync(ownerPublicKey,Program.WorkenMintPublicKey);
+            var result = await client.GetTokenAccountsByOwnerAsync(ownerPublicKey,Program.WorkenMintPublicKeyString);
 
             if (!result.WasSuccessful) return null;
 
@@ -52,22 +54,22 @@ namespace worken_api.Services
             return tokenAccount;
         }
 
-        public async Task<string> SendTransaction(IRpcClient client, string transaction)
+        public async Task<TransactionResult> SendTransaction(IRpcClient client, string transaction)
         {
             var t = await client.SendTransactionAsync(transaction);
 
-            if (!t.WasSuccessful) return null;
+            if (!t.WasSuccessful) return new TransactionResult(null, new Exception(t.RawRpcResponse));
 
-            return t.Result;
+            return new TransactionResult(t.Result);
         }
 
-        public async Task<string> SendTransaction(IRpcClient client, byte[] transaction)
+        public async Task<TransactionResult> SendTransaction(IRpcClient client, byte[] transaction)
         {
             var t = await client.SendTransactionAsync(transaction);
 
-            if (!t.WasSuccessful) return null;
+            if (!t.WasSuccessful) return new TransactionResult(null, new Exception(t.RawRpcResponse));
 
-            return t.Result;
+            return new TransactionResult(t.Result);
         }
 
         public async Task<LatestBlockHash> GetRecentBlockHash(IRpcClient client)

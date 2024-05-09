@@ -1,5 +1,6 @@
 ﻿using Solnet.Rpc;
 using Solnet.Rpc.Models;
+using worken_api.Models;
 
 namespace worken_api.Interfaces
 {
@@ -11,8 +12,8 @@ namespace worken_api.Interfaces
         IRpcClient GetClientDevNet();
         IRpcClient GetClientTestNet();
         Task<IEnumerable<TokenAccount>> GetTokenAccountsByOwner(IRpcClient client, string ownerPublicKey);
-        Task<string> SendTransaction(IRpcClient client, string transaction);
-        Task<string> SendTransaction(IRpcClient client, byte[] transaction);
+        Task<TransactionResult> SendTransaction(IRpcClient client, string transaction);
+        Task<TransactionResult> SendTransaction(IRpcClient client, byte[] transaction);
         Task<LatestBlockHash> GetRecentBlockHash(IRpcClient client);
     }
 }

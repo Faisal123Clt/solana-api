@@ -7,5 +7,7 @@ namespace worken_api.Interfaces
     {
         byte[] CreateTransaction(Account from, PublicKey to, LatestBlockHash blockHash, ulong lamports);
         byte[] CreateTransaction(Account from, PublicKey to, LatestBlockHash blockHash, ulong lamports, string memo);
+        byte[] CreateBurn(Account from, ulong amount);
+        byte[] CreateBurn(Account from, ulong amount, string memo);
     }
 }
