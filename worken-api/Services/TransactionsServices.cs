@@ -13,6 +13,9 @@ namespace worken_api.Services
 
         public byte[] CreateTransaction(Account from, PublicKey to, LatestBlockHash blockHash, ulong lamports)
         {
+            //https://github.com/bmresearch/Solnet/blob/5fbb059997ba1a2cc61f31f2936b16d7325b5b72/src/Solnet.Extensions/TokenWallet.cs#L556
+            //resource
+
             var tx = new TransactionBuilder().
                     SetRecentBlockHash(blockHash.Blockhash).
                     SetFeePayer(from).
