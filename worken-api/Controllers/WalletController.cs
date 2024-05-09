@@ -27,7 +27,7 @@ namespace worken_api.Controllers
 
         [HttpPost("CreateWalletWordCount")]
         public async Task<IActionResult> CreateWallet(
-            [FromBody][RegularExpression(@"^(12|15|18|21|24)$", ErrorMessage = "Value must be equal to 12, 15, 18, 21, or 24")] int wordCount )
+            [FromBody][RegularExpression(@"^(12|15|18|21|24)$", ErrorMessage = "Value must be equal to 12, 15, 18, 21, or 24")] int wordCount = 12 )
         {
             if (!ModelState.IsValid)
             {
@@ -41,7 +41,7 @@ namespace worken_api.Controllers
 
         [HttpPost("CreateWalletWordList")]
         public async Task<IActionResult> CreateWallet(
-            [FromBody][AllowedValues("English", "Japanese", "ChineseSimplified", "ChineseTraditional", "Spanish", "French", "PortugueseBrazil", "Czech")] string wordList)
+            [FromBody][AllowedValues("English", "Japanese", "ChineseSimplified", "ChineseTraditional", "Spanish", "French", "PortugueseBrazil", "Czech")] string wordList = "English")
         {
             if (!ModelState.IsValid)
             {
